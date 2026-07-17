@@ -4,7 +4,7 @@ import { useEffect, useRef, useState } from 'react';
 import { motion, useScroll, useTransform } from 'framer-motion';
 import { ArrowUpRight } from 'lucide-react';
 import { useContent } from '@/lib/i18n';
-import { Magnetic, MaskLine, SectionLabel } from '@/components/primitives';
+import { MaskLine, SectionLabel } from '@/components/primitives';
 import {
   TRACED_VIEWBOX,
   TRACED_LEFT,
@@ -117,7 +117,7 @@ export function CTA() {
 
       <div className="relative edge">
         <MaskLine>
-          <SectionLabel number="07">{company.ui.contactLabel}</SectionLabel>
+          <SectionLabel number="08">{company.ui.contactLabel}</SectionLabel>
         </MaskLine>
 
         {/* The trigger sits on the clipping wrapper, never on the translated
@@ -161,21 +161,19 @@ export function CTA() {
 
         {/* Primary booking CTA */}
         <div className="mt-14">
-          <Magnetic strength={0.45}>
-            <button
-              type="button"
-              data-cal-namespace="assessment"
-              data-cal-link="clovo-solutions-7teskm"
-              data-cal-config='{"layout":"month_view"}'
-              className="group inline-flex items-center gap-4 bg-white px-9 py-6 font-display text-sm uppercase tracking-label text-obsidian transition-colors duration-500 ease-precision hover:bg-navy hover:text-white"
-            >
-              {company.ui.bookSession}
-              <ArrowUpRight
-                aria-hidden
-                className="h-5 w-5 transition-transform duration-500 ease-precision group-hover:translate-x-1 group-hover:-translate-y-1"
-              />
-            </button>
-          </Magnetic>
+          <button
+            type="button"
+            data-cal-namespace="assessment"
+            data-cal-link="clovo-solutions-7teskm"
+            data-cal-config='{"layout":"month_view"}'
+            className="group inline-flex items-center gap-4 bg-white px-9 py-6 font-display text-sm uppercase tracking-label text-obsidian transition-colors duration-500 ease-precision hover:bg-navy hover:text-white"
+          >
+            {company.ui.bookSession}
+            <ArrowUpRight
+              aria-hidden
+              className="h-5 w-5 transition-transform duration-500 ease-precision group-hover:translate-x-1 group-hover:-translate-y-1"
+            />
+          </button>
         </div>
 
         {/* Contact details + map, aligned side by side on large screens */}
@@ -214,13 +212,13 @@ export function CTA() {
                 {status ? (
                   <span
                     className={`inline-flex items-center gap-1.5 font-display text-[0.7rem] uppercase tracking-label ${
-                      status.open ? 'text-emerald-400' : 'text-accent/50'
+                      status.open ? 'text-emerald-400' : 'text-red-400'
                     }`}
                   >
                     <span
                       aria-hidden
                       className={`h-1.5 w-1.5 rounded-full ${
-                        status.open ? 'bg-emerald-400' : 'bg-accent/40'
+                        status.open ? 'bg-emerald-400' : 'bg-red-400'
                       }`}
                     />
                     {status.open ? company.ui.openNow : company.ui.closedNow}

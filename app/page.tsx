@@ -6,6 +6,7 @@ import { Services } from '@/components/Services';
 import { Projects } from '@/components/Projects';
 import { Process } from '@/components/Process';
 import { WhyUs } from '@/components/WhyUs';
+import { FAQ } from '@/components/FAQ';
 import { CTA } from '@/components/CTA';
 import { Footer } from '@/components/Footer';
 import { CalInit } from '@/components/CalInit';
@@ -29,6 +30,7 @@ export default function Page() {
         <Projects />
         <Process />
         <WhyUs />
+        <FAQ />
         <CTA />
       </main>
       <Footer />

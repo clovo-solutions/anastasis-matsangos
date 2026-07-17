@@ -58,6 +58,8 @@ export type UIStrings = {
   closedNow: string;
   closedLabel: string;
   days: string[];
+  faqLabel: string;
+  faqHeading: string;
 };
 
 export type Translation = {
@@ -77,6 +79,7 @@ export type Translation = {
   differentiators: { title: string; body: string }[];
   qualifications: { name: string }[];
   nav: { label: string }[];
+  faq: { question: string; answer: string }[];
   ui: UIStrings;
 };
 
@@ -232,6 +235,33 @@ const en: Translation = {
     { label: 'Approach' },
     { label: 'Contact' },
   ],
+  faq: [
+    {
+      question: 'Do I need a doctor’s referral?',
+      answer:
+        'No — you can book directly. If a referral or imaging turns out to be useful, we’ll tell you at the assessment.',
+    },
+    {
+      question: 'What happens in the first session?',
+      answer:
+        'A full assessment: your history, how you move and a hands-on examination — then we begin treatment and set a clear plan together.',
+    },
+    {
+      question: 'How long is each session?',
+      answer:
+        'Around 45–60 minutes, one-on-one with the same therapist from start to finish.',
+    },
+    {
+      question: 'How many sessions will I need?',
+      answer:
+        'It depends on the problem. You’ll get a realistic estimate after the first assessment — most people notice a change within a few sessions.',
+    },
+    {
+      question: 'What should I wear?',
+      answer:
+        'Comfortable clothing you can move in. For some areas we may ask you to expose the region being treated.',
+    },
+  ],
   ui: {
     heroTitle: 'Physiotherapy center',
     book: 'Book',
@@ -285,6 +315,8 @@ const en: Translation = {
     closedNow: 'Closed now',
     closedLabel: 'Closed',
     days: ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday', 'Sunday'],
+    faqLabel: 'FAQ',
+    faqHeading: 'Questions, answered.',
   },
 };
 
@@ -444,6 +476,33 @@ const el: Translation = {
     { label: 'Προσέγγιση' },
     { label: 'Επικοινωνία' },
   ],
+  faq: [
+    {
+      question: 'Χρειάζομαι παραπεμπτικό από γιατρό;',
+      answer:
+        'Όχι — μπορείτε να κλείσετε ραντεβού απευθείας. Αν χρειαστεί παραπεμπτικό ή απεικόνιση, θα σας το πούμε στην αξιολόγηση.',
+    },
+    {
+      question: 'Τι γίνεται στην πρώτη συνεδρία;',
+      answer:
+        'Μια πλήρης αξιολόγηση: ιστορικό, πώς κινείστε και πρακτική εξέταση — και μετά ξεκινάμε τη θεραπεία και ορίζουμε μαζί ένα ξεκάθαρο πλάνο.',
+    },
+    {
+      question: 'Πόσο διαρκεί κάθε συνεδρία;',
+      answer:
+        'Περίπου 45–60 λεπτά, προσωπικά με τον ίδιο θεραπευτή από την αρχή ως το τέλος.',
+    },
+    {
+      question: 'Πόσες συνεδρίες θα χρειαστώ;',
+      answer:
+        'Εξαρτάται από το πρόβλημα. Θα έχετε μια ρεαλιστική εκτίμηση μετά την πρώτη αξιολόγηση — οι περισσότεροι νιώθουν διαφορά μέσα σε λίγες συνεδρίες.',
+    },
+    {
+      question: 'Τι να φορέσω;',
+      answer:
+        'Άνετα ρούχα που σας επιτρέπουν να κινείστε. Για ορισμένες περιοχές ίσως σας ζητήσουμε να αφήσετε ακάλυπτο το σημείο που θα δουλέψουμε.',
+    },
+  ],
   ui: {
     heroTitle: 'Κέντρο Φυσιοθεραπείας',
     book: 'Ραντεβού',
@@ -477,8 +536,8 @@ const el: Translation = {
     qualificationsNote:
       'BSc Φυσιοθεραπείας και OMT επιβεβαιωμένα· τα στοιχεία εγγραφής προς επαλήθευση πριν τη δημοσίευση.',
     contactLabel: 'Επικοινωνία',
-    ctaHeading1: 'Ας σας βάλουμε',
-    ctaHeading2: 'ξανά σε κίνηση.',
+    ctaHeading1: 'Σας βάζουμε ξανά',
+    ctaHeading2: 'στην κίνηση.',
     email: 'Email',
     telephone: 'Τηλέφωνο',
     locations: 'Πού θα μας βρείτε',
@@ -497,6 +556,8 @@ const el: Translation = {
     closedNow: 'Κλειστά τώρα',
     closedLabel: 'Κλειστά',
     days: ['Δευτέρα', 'Τρίτη', 'Τετάρτη', 'Πέμπτη', 'Παρασκευή', 'Σάββατο', 'Κυριακή'],
+    faqLabel: 'Συχνές ερωτήσεις',
+    faqHeading: 'Απαντήσεις στις απορίες σας.',
   },
 };
 
@@ -656,6 +717,33 @@ const ru: Translation = {
     { label: 'Подход' },
     { label: 'Контакты' },
   ],
+  faq: [
+    {
+      question: 'Нужно ли направление от врача?',
+      answer:
+        'Нет — вы можете записаться напрямую. Если понадобится направление или снимки, мы скажем об этом на осмотре.',
+    },
+    {
+      question: 'Что происходит на первом приёме?',
+      answer:
+        'Полная оценка: анамнез, как вы двигаетесь, и ручной осмотр — затем начинаем лечение и вместе составляем понятный план.',
+    },
+    {
+      question: 'Сколько длится один сеанс?',
+      answer:
+        'Около 45–60 минут, один на один с тем же специалистом от начала до конца.',
+    },
+    {
+      question: 'Сколько сеансов понадобится?',
+      answer:
+        'Зависит от проблемы. Реалистичную оценку вы получите после первого осмотра — большинство чувствует изменения уже за несколько сеансов.',
+    },
+    {
+      question: 'Что надеть?',
+      answer:
+        'Удобную одежду, в которой легко двигаться. Для некоторых зон мы можем попросить освободить участок, с которым будем работать.',
+    },
+  ],
   ui: {
     heroTitle: 'Центр физиотерапии',
     book: 'Записаться',
@@ -709,6 +797,8 @@ const ru: Translation = {
     closedNow: 'Закрыто сейчас',
     closedLabel: 'Закрыто',
     days: ['Понедельник', 'Вторник', 'Среда', 'Четверг', 'Пятница', 'Суббота', 'Воскресенье'],
+    faqLabel: 'Частые вопросы',
+    faqHeading: 'Ответы на ваши вопросы.',
   },
 };
 

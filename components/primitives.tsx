@@ -48,7 +48,11 @@ export function RevealText({
   return (
     <Tag className={className}>
       <span className="sr-only">{text}</span>
+      {/* Keyed by text: a language switch remounts the reveal so its words
+          re-trigger, instead of the new words inheriting a spent once-observer
+          and staying stuck in the hidden (translated-down) state. */}
       <motion.span
+        key={text}
         aria-hidden
         initial="hidden"
         whileInView="show"
@@ -229,8 +233,13 @@ export function Magnetic({
   const onMove = (e: React.MouseEvent) => {
     if (disabled || !ref.current) return;
     const r = ref.current.getBoundingClientRect();
-    x.set((e.clientX - (r.left + r.width / 2)) * strength);
-    y.set((e.clientY - (r.top + r.height / 2)) * strength);
+    // getBoundingClientRect reflects the current translate, so measure the
+    // resting centre by removing it — otherwise the pull feeds back on itself
+    // and the element oscillates out from under the cursor.
+    const cx = r.left + r.width / 2 - sx.get();
+    const cy = r.top + r.height / 2 - sy.get();
+    x.set((e.clientX - cx) * strength);
+    y.set((e.clientY - cy) * strength);
   };
 
   const reset = () => {

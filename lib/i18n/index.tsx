@@ -55,6 +55,7 @@ function build(t: Translation) {
     })),
     qualifications: company.qualifications.map((q, i) => ({ ...q, name: t.qualifications[i].name })),
     nav: company.nav.map((n, i) => ({ ...n, label: t.nav[i].label })),
+    faq: t.faq,
     ui: t.ui,
   };
 }
